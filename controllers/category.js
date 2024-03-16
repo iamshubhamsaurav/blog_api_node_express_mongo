@@ -23,7 +23,6 @@ exports.getCategories = async (req, res, next) => {
 // @desc        : Get single category
 // @access      : Public
 exports.getCategory = async (req, res, next) => {
-
     try {
         const category = await Category.findById(req.params.id)
         if(!category) {
@@ -42,8 +41,6 @@ exports.getCategory = async (req, res, next) => {
             message: '500 Server Error!'
         })
     }
-
-    
 }
 
 // @route       : POST /api/v1/categories
@@ -68,18 +65,51 @@ exports.createCategory = async (req, res, next) => {
 // @desc        : Update category
 // @access      : Private
 exports.updateCategory = async (req, res, next) => {
-    res.status(200).json({
-        success: true,
-        category: {}
-    })
+    try {
+        let category = await Category.findById(req.params.id)
+        if(!category) {
+            res.status(404).json({
+                success: false,
+                message: "Resource Not Found"
+            })
+        }
+        category = await Category.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+            runValidators: true
+        })
+        res.status(200).json({
+            success: true,
+            category: category
+        }) 
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: '500 Server Error!'
+        })
+    }
 }
 
 // @route       : DELETE /api/v1/categories/:id
 // @desc        : Delete category
 // @access      : Private
 exports.deleteCategory = async (req, res, next) => {
-    res.status(200).json({
-        success: true,
-        category: {}
-    })
+    try {
+        let category = await Category.findById(req.params.id)
+        if(!category) {
+            res.status(404).json({
+                success: false,
+                message: "Resource Not Found"
+            })
+        }
+        category = await Category.findByIdAndDelete(req.params.id)
+        res.status(200).json({
+            success: true,
+            category: category
+        }) 
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: '500 Server Error!'
+        })
+    }
 }
