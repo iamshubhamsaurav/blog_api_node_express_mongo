@@ -8,6 +8,7 @@ exports.getCategories = async (req, res, next) => {
         const categories = await Category.find()
         res.status(200).json({
             success: true,
+            count: categories.length,
             categories: categories
         })
     } catch (error) {
