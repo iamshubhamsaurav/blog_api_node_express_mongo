@@ -10,6 +10,11 @@ const blogSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please add a body']
     },
+    categoryId: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Category',
+        required: [true, 'Please adda a category to the blog']
+    },
     featuredImage: String
 }, 
 {

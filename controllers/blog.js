@@ -29,7 +29,7 @@ exports.getBlogs = async (req, res, next) => {
 // @route       : GET /api/v1/blogs/:id
 // @desc        : Get single blog
 // @access      : Public
-exports.getBlogs = async (req, res, next) => {
+exports.getBlog = async (req, res, next) => {
     try {
         const blog = await Blog.findById(req.params.id)
         if(!blog) {

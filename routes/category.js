@@ -8,7 +8,11 @@ const {
     deleteCategory
 } = require('../controllers/category')
 
+const blogRoute = require('./blogs')
+
 const router = express.Router()
+
+router.use('/:categoryId/blogs', blogRoute)
 
 router
     .route('/')
