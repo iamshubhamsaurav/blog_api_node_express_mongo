@@ -27,7 +27,7 @@ exports.getCategory = async (req, res, next) => {
     try {
         const category = await Category.findById(req.params.id)
         if(!category) {
-            res.status(404).json({
+            return res.status(404).json({
                 success: false,
                 message: "Resource Not Found"
             })
@@ -69,7 +69,7 @@ exports.updateCategory = async (req, res, next) => {
     try {
         let category = await Category.findById(req.params.id)
         if(!category) {
-            res.status(404).json({
+            return res.status(404).json({
                 success: false,
                 message: "Resource Not Found"
             })
@@ -97,7 +97,7 @@ exports.deleteCategory = async (req, res, next) => {
     try {
         let category = await Category.findById(req.params.id)
         if(!category) {
-            res.status(404).json({
+            return res.status(404).json({
                 success: false,
                 message: "Resource Not Found"
             })
