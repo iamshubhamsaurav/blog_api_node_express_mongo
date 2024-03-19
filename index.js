@@ -7,7 +7,7 @@ const connectDB = require('./config/db')
 dotenv.config({path: './config/config.env'})
 
 const categoryRoute = require('./routes/category')
-const blogRoute = require('/api/v1/blogs/')
+const blogRoute = require('./routes/blogs')
 
 connectDB()
 
