@@ -1,0 +1,27 @@
+[
+    {
+        "_id": "65f6c1ea818948c96b232f4a",
+        "name": "Android Dev",
+        "description": "All About Android Dev"
+    },
+    {
+        "_id": "65f9af3cc07c617011227c45",
+        "name": "Web Dev",
+        "description": "All about front end dev"
+    },
+    {
+        "_id": "65fb2d49017a736868ecc9ec",
+        "name": "iOS Dev",
+        "description": "All posts about iOS Dev"
+    },
+    {
+        "_id": "65fb2d53017a736868ecc9ee",
+        "name": "Backend Dev",
+        "description": "All posts about backend Dev"
+    },
+    {
+        "_id": "65fb2d6c017a736868ecc9f1",
+        "name": "Full Stack Dev",
+        "description": "All posts about full stack Dev"
+    }
+]
